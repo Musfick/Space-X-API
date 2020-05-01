@@ -3,96 +3,49 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="#F6F6F5"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
-            android:id="@+id/layout_refreshing"
+        <include android:id="@+id/layout_error" android:visibility="gone" layout="@layout/layout_error"/>
+        <include android:id="@+id/layout_loading" android:visibility="gone" layout="@layout/layout_loading"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="#F6F6F5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ProgressBar
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_margin="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/layout_refreshing"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/sync_data_from_server"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
-        </LinearLayout>
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="1dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_refreshing" />
+                <ProgressBar
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="8dp" />
 
-        <LinearLayout
-            android:id="@+id/layout_loading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <ProgressBar
-                android:id="@+id/progress_loading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/loading_message"
-                android:text="@string/fetching_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sync_data_from_server"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/layout_error"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:contentDescription="@string/error"
-                android:src="@drawable/ic_error_outline" />
-
-            <TextView
-                android:id="@+id/error_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/no_internet"
-                android:layout_margin="8dp"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
-        </LinearLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_refreshing" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 </layout>

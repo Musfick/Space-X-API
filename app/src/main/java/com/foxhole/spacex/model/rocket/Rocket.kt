@@ -32,22 +32,22 @@ data class Rocket(
     val rocketId: String = ""
     @SerializedName("first_flight")
     @Ignore
-    val firstFlight: String? = null
+    val firstFlight: String = ""
     @Ignore
-    val active : Boolean? = null
+    val active : Boolean = true
     @Ignore
-    val stage : Int? = null
+    val stage : Int = 0
     @Ignore
-    val boosters: Int? = null
+    val boosters: Int = 0
     @SerializedName("success_rate_pct")
     @Ignore
-    val successRate : Int? = null
+    val successRate : Int = 0
     @Ignore
-    val country : String? = null
+    val country : String = ""
     @Ignore
-    val company : String? = null
+    val company : String = ""
     @Ignore
-    val wikipedia : String? = null
+    val wikipedia : String = ""
     @Ignore
-    val description : String? = null
+    val description : String = ""
 }

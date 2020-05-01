@@ -31,6 +31,6 @@ abstract class BaseRecyclerViewAdapter<T> : RecyclerView.Adapter<RecyclerView.Vi
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        onBindData(holder,items.get(position));
+        onBindData(holder,items.get(position))
     }
 }

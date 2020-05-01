@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/saved"
+    app:startDestination="@id/rocketsFragment">
+
+    <fragment
+        android:id="@+id/rocketsFragment"
+        android:name="com.foxhole.spacex.ui.rockets.RocketsFragment"
+        android:label="My Rockets" />
+</navigation>

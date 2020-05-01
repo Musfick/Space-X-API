@@ -2,4 +2,8 @@
     <string name="app_name">Space X</string>
     <string name="home">Home</string>
     <string name="saved_rockets">Saved Rockets</string>
+    <string name="error">Error</string>
+    <string name="sync_data_from_server">Sync data from server...</string>
+    <string name="no_internet">No Internet !</string>
+    <string name="fetching_data">Fetching data...</string>
 </resources>
